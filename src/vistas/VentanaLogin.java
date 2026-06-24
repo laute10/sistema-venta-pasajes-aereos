@@ -62,7 +62,7 @@ public class VentanaLogin extends JFrame {
 
         // "m" en cursiva grande
         JLabel labelM = new JLabel("m");
-        labelM.setBounds(18, 8, 30, 40);
+        labelM.setBounds(18, -6, 30, 40);
         labelM.setFont(new Font("Serif", Font.ITALIC, 32));
         labelM.setForeground(AZUL_OSCURO);
 
@@ -92,20 +92,20 @@ public class VentanaLogin extends JFrame {
 
         // --- Lado izquierdo: texto de bienvenida + logo grande ---
         JLabel labelBienvenida = new JLabel("<html>INGRESA A TU<br>CUENTA EN MIRRORS</html>");
-        labelBienvenida.setBounds(20, 25, 180, 40);
+        labelBienvenida.setBounds(60, 25, 180, 40);
         labelBienvenida.setFont(new Font("SansSerif", Font.PLAIN, 11));
         labelBienvenida.setForeground(AZUL_OSCURO);
 
         // "m" grande cursiva decorativa
         JLabel labelLogoGrande = new JLabel("m");
-        labelLogoGrande.setBounds(15, 60, 180, 160);
+        labelLogoGrande.setBounds(60, 40, 180, 160);
         labelLogoGrande.setFont(new Font("Serif", Font.ITALIC, 140));
         labelLogoGrande.setForeground(AZUL_OSCURO);
 
         // --- Lado derecho: logo pequeño + campos ---
         // Logo derecho
         JLabel labelMDer = new JLabel("m");
-        labelMDer.setBounds(285, 20, 25, 35);
+        labelMDer.setBounds(285, 10, 25, 35);
         labelMDer.setFont(new Font("Serif", Font.ITALIC, 28));
         labelMDer.setForeground(AZUL_OSCURO);
 
