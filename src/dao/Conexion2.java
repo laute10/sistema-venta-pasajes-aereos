@@ -17,7 +17,7 @@ public class Conexion {
 
     private static final String URL      = "jdbc:mysql://localhost:3306/venta_pasajes";
     private static final String USUARIO  = "root";
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "CONTRASEÑA";
 
     // --- Método para abrir la conexión ---
     public static Connection getConexion() {
