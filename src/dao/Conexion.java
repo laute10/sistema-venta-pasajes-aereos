@@ -1,5 +1,7 @@
 package dao;
 
+import servicios.Configuracion;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -14,10 +16,11 @@ import java.sql.SQLException;
 public class Conexion {
 
     // --- Datos de conexión ---
+    // Se leen de config.properties (ver config.example.properties)
 
-    private static final String URL      = "jdbc:mysql://localhost:3306/venta_pasajes";
-    private static final String USUARIO  = "root";
-    private static final String PASSWORD = "CONTRASEÑA";
+    private static final String URL      = Configuracion.get("db.url", "jdbc:mysql://localhost:3306/venta_pasajes");
+    private static final String USUARIO  = Configuracion.get("db.usuario", "root");
+    private static final String PASSWORD = Configuracion.get("db.password", "");
 
     // --- Método para abrir la conexión ---
     public static Connection getConexion() {

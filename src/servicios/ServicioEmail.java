@@ -13,9 +13,10 @@ import java.util.Properties;
 public class ServicioEmail {
 
     // --- Datos de la cuenta Gmail que envía los correos ---
-    // Reemplazá estos valores con tu cuenta y contraseña de aplicación
-    private static final String EMAIL_ORIGEN = "lautiespejo10@gmail.com";
-    private static final String CONTRASENA   = "nuhs gude kimm gltv"; // contraseña de aplicación
+    // Se leen de config.properties (ver config.example.properties).
+    // Nunca escribas la contraseña directamente en el código.
+    private static final String EMAIL_ORIGEN = Configuracion.get("email.origen", "");
+    private static final String CONTRASENA   = Configuracion.get("email.contrasena", ""); // contraseña de aplicación
 
     // --- Configuración del servidor de Gmail ---
     // Estos valores son siempre los mismos para Gmail, no los toques
@@ -47,6 +48,13 @@ public class ServicioEmail {
     // Los tres métodos públicos de abajo lo usan internamente
     // ============================================================
     private static void enviarEmail(String destinatario, String asunto, String cuerpo) {
+        // Si no hay cuenta configurada, la app sigue funcionando sin enviar correos
+        if (EMAIL_ORIGEN.isEmpty() || CONTRASENA.isEmpty()) {
+            System.out.println("Envío de correos desactivado: completá email.origen y "
+                    + "email.contrasena en config.properties.");
+            return;
+        }
+
         try {
             Session session = crearSesion();
 
